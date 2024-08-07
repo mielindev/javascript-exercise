@@ -48,11 +48,11 @@ function tinhDiem() {
   ) {
     document.querySelector(
       ".manageresult"
-    ).innerHTML = `Bạn đã đậu với số điểm ${tongDiem}`;
+    ).innerHTML = `<h2 class="py-3">Bạn đã đậu với số điểm ${tongDiem}</h2>`;
   } else {
     document.querySelector(
       ".manageresult"
-    ).innerHTML = `Bạn đã rớt với số điểm ${tongDiem}`;
+    ).innerHTML = `<h2 class="py-3">Bạn đã rớt với số điểm ${tongDiem}</h2>`;
   }
 }
 function tinhTienDien() {
@@ -73,5 +73,5 @@ function tinhTienDien() {
   }
   document.querySelector(
     ".electricresult"
-  ).innerHTML = `Tên: ${hoTen} - Tiền tiện: ${tongTien.toLocaleString()} VNĐ`;
+  ).innerHTML = `<h2 class="py-3">Tên: ${hoTen} - Tiền tiện: ${tongTien.toLocaleString()} VNĐ</h2>`;
 }
