@@ -139,6 +139,35 @@
       </div>
       <div class="electricresult container"></div>
     </section>
+    <section id="tinhThue" class="bg-secondary text-white">
+      <div class="container">
+        <h2 class="text-warning pt-5">Bài Tập Tính Thuế Thu Nhập Cá Nhân</h2>
+        <h3>Nhập các thông tin sau</h3>
+        <input
+          class="rounded"
+          type="text"
+          id="fullName"
+          placeholder="Họ và tên"
+        />
+        <input
+          class="rounded"
+          type="text"
+          id="incomeYear"
+          placeholder="Tổng thu nhập năm"
+        />
+        <input
+          class="rounded"
+          type="text"
+          id="people"
+          placeholder="Số người phụ thuộc"
+        />
+        <br />
+        <button class="btn btn-primary rounded mt-2" onclick="tinhThue()">
+          Tính thuế
+        </button>
+      </div>
+      <div class="thueresult container"></div>
+    </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -75,3 +75,50 @@ function tinhTienDien() {
     ".electricresult"
   ).innerHTML = `<h2 class="py-3">Tên: ${hoTen} - Tiền tiện: ${tongTien.toLocaleString()} VNĐ</h2>`;
 }
+function tinhThue() {
+  var hoVaTen = document.querySelector("#fullName").value;
+  var thuNhapNam = document.querySelector("#incomeYear").value * 1;
+  var soNguoi = document.querySelector("#people").value * 1;
+  var phanChiuThue = thuNhapNam - 4e6 - soNguoi * 1.6e6;
+  var soThue = null;
+  if (phanChiuThue <= 60e6) {
+    soThue = phanChiuThue * 0.05;
+  } else if (phanChiuThue <= 120e6) {
+    soThue = 60e6 * 0.05 + (phanChiuThue - 60e6) * 0.1;
+  } else if (phanChiuThue <= 210e6) {
+    soThue = 60e6 * 0.05 + 60e6 * 0.1 + (phanChiuThue - 120e6) * 0.15;
+  } else if (phanChiuThue <= 384e6) {
+    soThue =
+      60e6 * 0.05 + 60e6 * 0.1 + 90e6 * 0.15 + (phanChiuThue - 210e6) * 0.2;
+  } else if (phanChiuThue <= 624e6) {
+    soThue =
+      60e6 * 0.05 +
+      60e6 * 0.1 +
+      90e6 * 0.15 +
+      174e6 * 0.2 +
+      (phanChiuThue - 384e6) * 0.25;
+  } else if (phanChiuThue <= 960e6) {
+    soThue =
+      60e6 * 0.05 +
+      60e6 * 0.1 +
+      90e6 * 0.15 +
+      174e6 * 0.2 +
+      240e6 * 0.25 +
+      (phanChiuThue - 624e6) * 0.3;
+  } else {
+    soThue =
+      60e6 * 0.05 +
+      60e6 * 0.1 +
+      90e6 * 0.15 +
+      174e6 * 0.2 +
+      240e6 * 0.25 +
+      336e6 * 0.3 +
+      (phanChiuThue - 960e6) * 0.35;
+  }
+  document.querySelector(".thueresult").innerHTML = `<h2>
+    Họ và tên: ${hoVaTen} - Thuế phải trả: ${soThue.toLocaleString("vi", {
+    style: "currency",
+    currency: "VND",
+  })}
+  </h2>`;
+}
