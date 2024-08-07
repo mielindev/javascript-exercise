@@ -16,16 +16,106 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./index.css" />
   </head>
 
   <body>
-    <header>
-      <!-- place navbar here -->
-    </header>
-    <main></main>
-    <footer>
-      <!-- place footer here -->
-    </footer>
+    <section id="manageStudent" class="bg-secondary text-white">
+      <div class="container my-2">
+        <h2 class="text-warning">Bài tập Quản Lý Sinh Viên</h2>
+        <h3>Nhập điểm chuẩn</h3>
+        <input
+          class="rounded"
+          type="text"
+          id="goalScore"
+          placeholder="Nhập điểm chuẩn"
+        />
+        <h3>Nhập điểm thi</h3>
+        <input
+          class="rounded"
+          type="text"
+          id="firstScore"
+          placeholder="Nhập điểm môn thứ nhất"
+        />
+        <br />
+        <input
+          class="rounded"
+          type="text"
+          id="secondScore"
+          placeholder="Nhập điểm môn thứ hai"
+        />
+        <br />
+        <input
+          class="rounded"
+          type="text"
+          id="thridScore"
+          placeholder="Nhập điểm môn thứ ba"
+        />
+        <br />
+        <h3>Nhập điểm ưu tiên</h3>
+        <ul class="list-unstyled d-flex">
+          <li>
+            <input type="radio" id="area1" value="area1" name="areaPriority" />
+            <label for="area1">Khu vực A</label>
+          </li>
+          <li>
+            <input type="radio" id="area2" value="area2" name="areaPriority" />
+            <label for="area2">Khu vực B</label>
+          </li>
+          <li>
+            <input type="radio" id="area3" value="area3" name="areaPriority" />
+            <label for="area3">Khu vực C</label>
+          </li>
+          <li>
+            <input type="radio" id="area4" value="area4" name="areaPriority" />
+            <label for="area4">Không thuộc khu vực ưu tiên</label>
+          </li>
+        </ul>
+        <hr />
+        <ul class="list-unstyled d-flex">
+          <li>
+            <input
+              type="radio"
+              id="entity1"
+              value="entity1"
+              name="entityPriority"
+            />
+            <label for="entity1">Đối tượng 1</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="entity2"
+              value="entity2"
+              name="entityPriority"
+            />
+            <label for="entity2">Đối tượng 2</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="entity3"
+              value="entity3"
+              name="entityPriority"
+            />
+            <label for="entity3">Đối tượng 3</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="entity4"
+              value="entity4"
+              name="entityPriority"
+            />
+            <label for="entity4">Không thuộc đối tượng ưu tiên</label>
+          </li>
+        </ul>
+        <button class="btn btn-primary rounded" onclick="tinhDiem()">
+          Tính điểm
+        </button>
+      </div>
+      <div class="manageresult container"></div>
+    </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
