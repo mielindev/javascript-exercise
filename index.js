@@ -55,3 +55,23 @@ function tinhDiem() {
     ).innerHTML = `Bạn đã rớt với số điểm ${tongDiem}`;
   }
 }
+function tinhTienDien() {
+  var soDien = document.querySelector("#soDien").value * 1;
+  var hoTen = document.querySelector("#hoTen").value;
+  var tongTien = null;
+  if (soDien <= 50) {
+    tongTien = soDien * 500;
+  } else if (soDien <= 100) {
+    tongTien = 50 * 500 + (soDien - 50) * 650;
+  } else if (soDien <= 200) {
+    tongTien = 50 * 500 + 50 * 650 + (soDien - 100) * 850;
+  } else if (soDien <= 350) {
+    tongTien = 50 * 500 + 50 * 650 + 100 * 850 + (soDien - 200) * 1100;
+  } else if (soDien > 350) {
+    tongTien =
+      50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (soDien - 350) * 1300;
+  }
+  document.querySelector(
+    ".electricresult"
+  ).innerHTML = `Tên: ${hoTen} - Tiền tiện: ${tongTien.toLocaleString()} VNĐ`;
+}

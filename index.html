@@ -21,8 +21,8 @@
 
   <body>
     <section id="manageStudent" class="bg-secondary text-white">
-      <div class="container my-2">
-        <h2 class="text-warning">Bài tập Quản Lý Sinh Viên</h2>
+      <div class="container">
+        <h2 class="text-warning my-2">Bài Tập Quản Lý Sinh Viên</h2>
         <h3>Nhập điểm chuẩn</h3>
         <input
           class="rounded"
@@ -115,6 +115,29 @@
         </button>
       </div>
       <div class="manageresult container"></div>
+    </section>
+    <section id="electricFee" class="bg-secondary text-white">
+      <div class="container">
+        <h2 class="text-warning pt-5">Bài Tập Tính Tiền Điện</h2>
+        <h3>Nhập số điện đã sử dụng</h3>
+        <input
+          type="text"
+          class="w-25 my-2 rounded"
+          id="hoTen"
+          placeholder="Nhập họ và tên"
+        />
+        <input
+          type="text"
+          class="w-25 my-2 rounded"
+          id="soDien"
+          placeholder="Nhập số điện"
+        />
+        <br />
+        <button class="btn btn-primary rounded" onclick="tinhTienDien()">
+          Tính tiền
+        </button>
+      </div>
+      <div class="electricresult container"></div>
     </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script
