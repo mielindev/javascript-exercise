@@ -48,11 +48,11 @@ function tinhDiem() {
   ) {
     document.querySelector(
       ".manageresult"
-    ).innerHTML = `<h2 class="py-3">Bạn đã đậu với số điểm ${tongDiem}</h2>`;
+    ).innerHTML = `<h2 class="py-3">Bạn đã đậu với số điểm: ${tongDiem}đ</h2>`;
   } else {
     document.querySelector(
       ".manageresult"
-    ).innerHTML = `<h2 class="py-3">Bạn đã rớt với số điểm ${tongDiem}</h2>`;
+    ).innerHTML = `<h2 class="py-3">Bạn đã rớt với số điểm: ${tongDiem}đ</h2>`;
   }
 }
 function tinhTienDien() {
@@ -73,7 +73,13 @@ function tinhTienDien() {
   }
   document.querySelector(
     ".electricresult"
-  ).innerHTML = `<h2 class="py-3">Tên: ${hoTen} - Tiền tiện: ${tongTien.toLocaleString()} VNĐ</h2>`;
+  ).innerHTML = `<h2 class="py-3">Tên: ${hoTen} - Tiền tiện: ${tongTien.toLocaleString(
+    "vi",
+    {
+      style: "currency",
+      currency: "VND",
+    }
+  )}</h2>`;
 }
 function tinhThue() {
   var hoVaTen = document.querySelector("#fullName").value;
@@ -115,10 +121,40 @@ function tinhThue() {
       336e6 * 0.3 +
       (phanChiuThue - 960e6) * 0.35;
   }
-  document.querySelector(".thueresult").innerHTML = `<h2>
+  document.querySelector(".thueresult").innerHTML = `<h2 class="py-3">
     Họ và tên: ${hoVaTen} - Thuế phải trả: ${soThue.toLocaleString("vi", {
     style: "currency",
     currency: "VND",
   })}
+  </h2>`;
+}
+function onOffConnection() {
+  var selectElement = document.querySelector("#catalogModel").value;
+  if (selectElement == "businessModel") {
+    document.querySelector("#manyConnect").className = "d-block";
+  } else {
+    document.querySelector("#manyConnect").className = "d-none";
+  }
+}
+function tinhTienCap() {
+  var selectElement = document.querySelector("#catalogModel").value;
+  var highChannel = document.querySelector("#highChannel").value * 1;
+  var manyConnect = document.querySelector("#manyConnect").value * 1;
+  var idCustomer = document.querySelector("#idCustomer").value;
+  var tongHoaDon = 0;
+  if ((selectElement = "businessModel")) {
+    if (manyConnect > 10) {
+      tongHoaDon = 15 + 75 + (manyConnect - 10) * 5 + highChannel * 50;
+    } else {
+      tongHoaDon = 15 + 75 + highChannel * 50;
+    }
+  } else {
+    tongHoaDon = 4.5 + 20.5 + highChannel * 7.5;
+  }
+  document.querySelector(".cablefeeresult").innerHTML = `<h2 class="py-3">
+    Mã khách hàng: ${idCustomer} - Tiền cáp: ${new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(tongHoaDon)}
   </h2>`;
 }

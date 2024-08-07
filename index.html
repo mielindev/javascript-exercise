@@ -168,6 +168,45 @@
       </div>
       <div class="thueresult container"></div>
     </section>
+    <section id="cabelFee" class="bg-secondary text-white pb-5">
+      <div class="container">
+        <h2 class="text-warning pt-5">Bài Tập Tính Tiền Cáp</h2>
+        <h3>Nhập các thông tin sau</h3>
+        <select
+          onchange="onOffConnection()"
+          name="model"
+          id="catalogModel"
+          class="rounded p-1 w-25"
+        >
+          <option value="">--Chọn loại khách hàng--</option>
+          <option value="peopleModel">Nhà Dân</option>
+          <option value="businessModel">Doanh Nghiệp</option>
+        </select>
+        <input
+          class="rounded"
+          type="text"
+          id="idCustomer"
+          placeholder="Mã khách hàng"
+        />
+        <input
+          class="rounded"
+          type="text"
+          id="highChannel"
+          placeholder="Số kênh cao cấp"
+        />
+        <br />
+        <input
+          class="d-none rounded"
+          type="text"
+          id="manyConnect"
+          placeholder="Số kết nối"
+        />
+        <button class="btn btn-primary rounded mt-2" onclick="tinhTienCap()">
+          Tính tiền
+        </button>
+      </div>
+      <div class="container cablefeeresult"></div>
+    </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
